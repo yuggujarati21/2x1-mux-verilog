@@ -1,11 +1,9 @@
-module mux_2x1 (
-  
-    input wire a,
-    input wire b,
-    input wire sel,
-    output wire y
-);
+module MUX_2x1 (i , s , o);
 
-assign y = sel ? b : a;
+    input [1:0]i;
+    input s;
+    output o;
+
+    assign o = i[s];
 
 endmodule
