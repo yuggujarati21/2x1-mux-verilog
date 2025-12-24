@@ -24,8 +24,8 @@ A testbench is included to verify functionality using different input combinatio
 - VS code / GTKWave / Vivado
 
 ## 📁 Files
-- `mux_2x1.v` – RTL design
-- `mux_2x1_tb.v` – Testbench
+- `2x1_mux.v` – RTL design
+- `2x1_mux_tb.v` – Testbench
 
 ## 🚀 Author
 **Yug Gujarati**  
