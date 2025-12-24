@@ -1,21 +1,20 @@
-module mux_2x1_tb;
+`timescale 1ps/1ps
+`include "2x1_MUX.v"
 
-reg a, b, sel;
-wire y;
+module MUX_2x1_tb;
+reg [1:0]i;
+reg s;
+wire o;
 
-mux_2x1 uut (
-    .a(a),
-    .b(b),
-    .sel(sel),
-    .y(y)
-);
+MUX_2x1 dut(.i(i) , .s(s) , .o(o));
 
 initial begin
-    a = 0; b = 0; sel = 0;
-    #10 a = 0; b = 1; sel = 0;
-    #10 a = 1; b = 0; sel = 1;
-    #10 a = 1; b = 1; sel = 1;
-    #10 $finish;
+    $dumpfile("2x1_MUX.vcd");
+    $dumpvars(0 , MUX_2x1_tb);
+    $display("I    S  |  O");
+    $display("------------");
+    i = 2'b01;
+    s = 0; #5 $display("%2b   %b  |  %b" , i , s , o);
+    s = 1; #5 $display("%2b   %b  |  %b" , i , s , o);
 end
-
 endmodule
